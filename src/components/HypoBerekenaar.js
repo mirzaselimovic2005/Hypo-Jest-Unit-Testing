@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
- const HypoBerekenaar = ({
+const HypoBerekenaar = ({
   inkomen,
   inkomen2,
   renteperiode,
@@ -14,12 +14,12 @@ import React, { useState, useEffect } from 'react';
   const [error, setError] = useState(null);
 
   const calcHypotheek = () => {
-    if (postcode === '9679' || postcode === '9681' || postcode === '9682') {
-      setError('Deze postcode kan niet');
+    if (postcode === "9679" || postcode === "9681" || postcode === "9682") {
+      setError("Deze postcode kan niet");
       setmaxLeen(0);
       setmaandelijks(0);
       settRente(0);
-      settbetaling(0); 
+      settbetaling(0);
       return;
     }
 
@@ -54,8 +54,7 @@ import React, { useState, useEffect } from 'react';
     const n = renteperiode * 12;
     const maandelijkseRente = rente / 12;
     const maandelijksValue =
-      (PR * maandelijkseRente) /
-      (1 - Math.pow(1 + maandelijkseRente, -n));
+      (PR * maandelijkseRente) / (1 - Math.pow(1 + maandelijkseRente, -n));
 
     const tRenteValue = maandelijksValue * n - PR;
     const tbetalingValue = PR + tRenteValue;
@@ -66,7 +65,6 @@ import React, { useState, useEffect } from 'react';
     settbetaling(tbetalingValue.toFixed(2));
     setError(null);
   };
-
 
   useEffect(() => {
     calcHypotheek();
@@ -86,6 +84,6 @@ import React, { useState, useEffect } from 'react';
       )}
     </div>
   );
-}
+};
 
 export default HypoBerekenaar;

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import InputForm from './InputForm';
-import HypoBerekenaar from './HypoBerekenaar';
-import './App.css';
+import React, { useState } from "react";
+import InputForm from "./components/InputForm";
+import HypoBerekenaar from "./components/HypoBerekenaar";
+import "./App.css";
 
 function App() {
   const [mortgageData, setMortgageData] = useState(null);
@@ -20,9 +20,9 @@ function App() {
           {mortgageData ? (
             <HypoBerekenaar {...mortgageData} />
           ) : (
-            <p>vul uw gegevens in om de hypotheek te berekene</p>
+            <p>Vul uw gegevens in pik</p>
           )}
-        </div>  
+        </div>
       </div>
     </div>
   );
