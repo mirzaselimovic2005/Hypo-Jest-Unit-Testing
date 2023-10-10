@@ -1,8 +1,13 @@
-import React from 'react';
+import React from "react";
 
-function Results({ maxLoanAmount, monthlyPayment, totalInterest, totalPayment }) {
+function Results({
+  maxLoanAmount,
+  monthlyPayment,
+  totalInterest,
+  totalPayment,
+}) {
   return (
-    <div className="results">
+    <div>
       <h2>Resultaten</h2>
       <p>Maximaal te lenen bedrag: €{maxLoanAmount}</p>
       <p>Maandelijkse betaling: €{monthlyPayment}</p>

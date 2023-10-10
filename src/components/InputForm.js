@@ -20,27 +20,27 @@ const InputForm = ({ onCalculate }) => {
   const isDisabled = !inkomen || !inkomen2 || !postcode;
 
   return (
-    <div className="input-form">
-      <label>
-        Eigen Inkomen:
+    <div className="Berekenaar-input-form">
+      <div className="Berekenaar-input-container">
+        <label>Je eigen bruto jaarinkomen:</label>
         <input
           type="number"
           value={inkomen}
           onChange={(e) => setinkomen(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Partner Inkomen:
+      </div>
+      <div className="Berekenaar-input-container">
+        <label>Je partners bruto jaarinkomen:</label>
         <input
           type="number"
           value={inkomen2}
           onChange={(e) => setinkomen2(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Rentevaste periode:
+      </div>
+      <div className="Berekenaar-input-container">
+        <label>Rentevaste periode:</label>
         <select
           value={renteperiode}
           onChange={(e) => setrenteperiode(e.target.value)}
@@ -51,30 +51,31 @@ const InputForm = ({ onCalculate }) => {
           <option value="20">20 jaar</option>
           <option value="30">30 jaar</option>
         </select>
-      </label>
-      <label>
-        Heeft u een studieschuld?
+      </div>
+      <div className="Berekenaar-input-container">
+        <label>Heeft u een studieschuld?</label>
         <input
           type="checkbox"
           checked={studentenschuld}
           onChange={(e) => setstudentenschuld(e.target.checked)}
+          style={{ width: "20px", height: "20px" }}
         />
-      </label>
-      <label>
-        Postcode:
+      </div>
+      <div className="Berekenaar-input-container">
+        <label>Postcode:</label>
         <input
           type="number"
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}
           required
         />
-      </label>
+      </div>
       <button
         className="Berekenen-Button"
         onClick={calcHypotheek}
         disabled={isDisabled}
       >
-        berekenen
+        Berekenen
       </button>
     </div>
   );

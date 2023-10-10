@@ -50,7 +50,7 @@ describe("HypoBerekenaar", () => {
   });
 });
 
-describe("HypoBerekenaar component", () => {
+describe("HypoBerekenaar", () => {
   it("Postcode gebied waar geen hypotheek voor verstrekt wordt", () => {
     const { getByText } = render(
       <HypoBerekenaar
@@ -67,7 +67,7 @@ describe("HypoBerekenaar component", () => {
   });
 });
 
-describe("HypoBerekenaar component", () => {
+describe("HypoBerekenaar", () => {
   it("Studieschuld aan", () => {
     const { getByText } = render(
       <HypoBerekenaar
