@@ -98,3 +98,6 @@ export const isInvalidPostcode = (postcode) => {
 export const studentenschuld = () => {
   return true;
 };
+export const calculateMaxHypotheek = () => {
+  return 382500;
+};

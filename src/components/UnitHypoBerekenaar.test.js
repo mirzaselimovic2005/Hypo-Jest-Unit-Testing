@@ -1,8 +1,10 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import HypoBerekenaar from "./HypoBerekenaar";
-import { isInvalidPostcode } from "./HypoBerekenaar";
-import { studentenschuld } from "./HypoBerekenaar";
+import { render, screen } from "@testing-library/react";
+import HypoBerekenaar, {
+  isInvalidPostcode,
+  studentenschuld,
+  calculateMaxHypotheek,
+} from "./HypoBerekenaar";
 
 describe("Postcode niet mogelijk", () => {
   it("returned true als postcode niet mogelijk is", () => {
@@ -20,5 +22,28 @@ describe("studentenschuld aan", () => {
   });
 });
 
+describe('hypotheek met partner', () => {
+  it('returned true als verwachte PR resultaat klopt van de 2 inkomens', () => {
+    const inkomen = 50000;
+    const inkomen2 = 20000;
+    const studentenschuld = false;
+    const expectedMaxHypotheek = 382500;
 
+    const result = calculateMaxHypotheek(inkomen, inkomen2, studentenschuld);
+    
+    expect(result).toBe(expectedMaxHypotheek);
+  });
+});
 
+describe('hypotheek zonder partner', () => {
+  it('returned true als verwachte PR resultaat klopt van de 1 inkomen', () => {
+    const inkomen = 50000;
+    const inkomen2 = 0;
+    const studentenschuld = false;
+    const expectedMaxHypotheek = 382500;
+
+    const result = calculateMaxHypotheek(inkomen, inkomen2, studentenschuld);
+    
+    expect(result).toBe(expectedMaxHypotheek);
+  });
+});
