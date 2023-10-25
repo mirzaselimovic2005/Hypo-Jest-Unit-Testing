@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import HypoBerekenaar from "./HypoBerekenaar";
+import HypoBerekenaar from "../components/HypoBerekenaar";
 
 describe("HypoBerekenaar", () => {
   it("Hypotheek zonder partner", () => {
