@@ -101,3 +101,20 @@ export const studentenschuld = () => {
 export const calculateMaxHypotheek = () => {
   return 382500;
 };
+export const calculateRente = (renteperiode) => {
+  switch (parseInt(renteperiode)) {
+    case 1:
+      return 0.02;
+    case 5:
+      return 0.03;
+    case 10:
+      return 0.035;
+    case 20:
+      return 0.045;
+    case 30:
+      return 0.05;
+    default:
+      return 0.0;
+  }
+};
+
