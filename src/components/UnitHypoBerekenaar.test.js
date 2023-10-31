@@ -5,7 +5,7 @@ import HypoBerekenaar, {
   studentenschuld,
   calculateMaxHypotheek,
   calculateRente,
-} from "../components/HypoBerekenaar";
+} from "./HypoBerekenaar";
 
 describe("Postcode niet mogelijk", () => {
   it("returned true als postcode niet mogelijk is", () => {
